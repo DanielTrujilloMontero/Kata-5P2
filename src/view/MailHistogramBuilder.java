@@ -12,11 +12,11 @@ import model.Mail;
 
 public class MailHistogramBuilder {
 
-    public static Histogram<String> build(List<Mail> mailList) {
+    public static Histogram<String> build(List<String> mailList) {
         Histogram<String> histogram = new Histogram();
         
-        for(Mail m : mailList) {
-            histogram.increment(m.getDomain());
+        for(String m : mailList) {
+            histogram.increment(m);
         }
         return histogram;
     }

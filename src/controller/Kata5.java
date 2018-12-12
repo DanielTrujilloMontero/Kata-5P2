@@ -12,7 +12,7 @@ import model.Histogram;
 import model.Mail;
 import view.HistogramDisplay;
 import view.MailHistogramBuilder;
-import view.MailListReader;
+import view.MailListReaderDB;
 
 /**
  *
@@ -21,7 +21,7 @@ import view.MailListReader;
 public class Kata5 {
 
     private String fileName;
-    private List<Mail> mailsList;
+    private List<String> mailsList;
     private Histogram<String> histogram;
     private HistogramDisplay histogramDisplay;
     
@@ -35,7 +35,7 @@ public class Kata5 {
     }
     
     private void input() throws IOException {
-        mailsList = MailListReader.read(fileName);
+        mailsList = MailListReaderDB.read(fileName);
     }
     
     private void process() {
